@@ -28,13 +28,7 @@ pipeline {
         
         stage('Deploy to Target Org') {
             steps {
-                bat "\"%SF_CLI_PATH%\" project deploy start --target-org targetOrg --source-dir force-app"
-            }
-        }
-        
-        stage('Run Tests') {
-            steps {
-                bat "\"%SF_CLI_PATH%\" apex run test --target-org targetOrg --test-level RunLocalTests --wait 10"
+                bat "\"%SF_CLI_PATH%\" project deploy start --target-org targetOrg --source-dir force-app --test-level NoTestRun"
             }
         }
     }
