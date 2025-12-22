@@ -4,7 +4,7 @@ public with sharing class AccountService {
     }
     
     public static Account createAccount(String name, String industry) {
-        Account acc = new Account(Name = name, Industry = industry, AccountType = 'Prospect');
+        Account acc = new Account(Name = 'Jenkins', Industry = industry);
         insert acc;
         return acc;
     }
